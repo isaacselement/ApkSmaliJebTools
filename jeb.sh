@@ -12,11 +12,18 @@ classesDexPath=$1
 if [ $__OPTION__ == "-f" ]; then
 	classesDexPath=$2
 	classesDexDecompilePath=${classesDexPath}_decompiled
-	pushd ${classesDexDecompilePath} 
-	find . | xargs grep -ri $3 -l
+	pushd ${classesDexDecompilePath}
+	echo "-----------------"
+	find . | xargs grep -rl $3
+	echo "-----------------"
 	popd
 	exit 1
 fi
- 
+
+classesDexDecompiledPath=${classesDexPath}_decompiled
+if [ -d "${classesDexDecompiledPath}" ]; then
+	rm -rf ${classesDexDecompiledPath} 
+fi
+
 java -Xmx1024m -jar ${jebJarPath} --automation --script=${JEBDecompileAllPyPath} ${classesDexPath}
 
