@@ -1,0 +1,8 @@
+#JEB properties
+#Tue Apr 28 22:20:50 CST 2015
+last_run=1430230849
+first_run=1430227951
+last_version_run=1.5.201404100
+eula_accepted=true
+check_update=true
+db_autosave_timeout_minutes=-1
