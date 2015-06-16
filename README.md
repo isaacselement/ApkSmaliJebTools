@@ -30,7 +30,7 @@
 
 
 ######Third
-1. Copy your smali codes into a JavaSE Project
+1. Copy your smali codes into a New JavaSE Project. Or, When New JavaSE Porject, unchecked the 'Use default location', reference to your samli folder, this will be convience for debug and pack apk.
 2. Set some breakpoints 
 2. Close your origin project (the apk's project if you have / or needed)
 3. In Debug Configuration, set Remote Port, then hit Debug button
