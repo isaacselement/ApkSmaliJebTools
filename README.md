@@ -26,13 +26,13 @@
 
 ######Second. Open another terminal and start:
 
-    ./apk.sh com.xxx.apk
+    ./apk.sh com.xxx.apk	// it will generate the smali codes
 
 
 ######Third
-1.Copy your smali codes into Java Project, set some breakpoints 
-2.Close your origin project (if needed)
-2.In Debug Configuration, set Remote Port, then hit Debug
+1. Copy your smali codes into Java Project, set some breakpoints 
+2. Close your origin project (if needed)
+3. In Debug Configuration, set Remote Port, then hit Debug
 
 
 ### 2. JEB
