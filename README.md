@@ -58,6 +58,6 @@
 
 ######Second. Use jeb to rename the classes, variables, functions . The following is for extract and search .
 
-	 ./jeb.sh ./com.xxx.xxx/classes.dex.jdb				// extract
+	 ./jeb.sh ./com.xxx.xxx/classes.dex.jdb	   // extract
 
-	 ./jeb.sh -f ./com.xxx.xxx/classes.dex.jdb "Callback_s"		// search the function, class, variaable name
+	 ./jeb.sh -f ./com.xxx.xxx/classes.dex.jdb "Callback_s"	 // search the function, class, variaable name
