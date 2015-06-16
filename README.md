@@ -22,7 +22,7 @@
 
     adb root
     adb shell
-    ls /data/app          // get the com.xxx.apk name
+    ls /data/app          	// get the com.xxx.apk name
 
 ######Second. Open another terminal and start:
 
@@ -30,9 +30,10 @@
 
 
 ######Third
-1. Copy your smali codes into Java Project, set some breakpoints 
-2. Close your origin project (if needed)
-3. In Debug Configuration, set Remote Port, then hit Debug
+1. Copy your smali codes into a JavaSE Project
+2. Set some breakpoints 
+2. Close your origin project (the apk's project if you have / or needed)
+3. In Debug Configuration, set Remote Port, then hit Debug button
 
 
 ### 2. JEB
@@ -53,10 +54,10 @@
 
 #### Usage
 
-######First. Extract you com.xxx.apk file
+######First. Extract you com.xxx.apk file, use Jeb to open the `classes.dex`
 
-######Second. Use jeb to rename the classes, variables, functions
+######Second. Use jeb to rename the classes, variables, functions . The following is for extract and search .
 
-	 ./jeb.sh ./com.xxx.xxx/classes.dex.jdb
+	 ./jeb.sh ./com.xxx.xxx/classes.dex.jdb				// extract
 
-	 ./jeb.sh -f ./com.xxx.xxx/classes.dex.jdb "Callback_s"
+	 ./jeb.sh -f ./com.xxx.xxx/classes.dex.jdb "Callback_s"		// search the function, class, variaable name
