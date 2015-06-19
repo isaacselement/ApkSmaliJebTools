@@ -26,15 +26,23 @@
 
 ######Second. Open another terminal and start:
 
-    ./apk.sh com.xxx.apk	// it will generate the smali codes
+    ./apk.sh com.xxx.apk	// it will generate the folder 'com.xxx', the smali codes in it
 
 
 ######Third
-1. Copy your smali codes into a New JavaSE Project. Or, When New JavaSE Porject, unchecked the 'Use default location', reference to your samli folder, this will be convience for debug and pack apk.
-2. Set some breakpoints 
-2. Close your origin project (the apk's project if you have / or needed)
-3. In Debug Configuration, set Remote Port, then hit Debug button
+New a JavaSE Porject, unchecked 'Use default location', reference to folder 'com.xxx'. This step is for debug and pack/repack apk.
 
+######Fourth
+1. Set some breakpoints 
+2. Close your origin project (the apk's project if you have / or if needed)
+3. In Debug Configuration, select Remote Java Application, set Remote Port
+
+######Fifth
+Hit 'enter' in apk.sh, in Eclipse Debug Configuration, then hit Debug button
+
+######Additional
+
+    ./apk.sh -P com.xxx		// this for repack apk to debug, then redo 'Third' to 'Fifth' steps
 
 ### 2. JEB
 
