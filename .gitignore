@@ -9,10 +9,7 @@
 
 !README.md
 
-!jeb.sh
-
-!apk.sh
-
+!*.sh
 
 .DS_Store
 
