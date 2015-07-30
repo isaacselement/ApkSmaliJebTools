@@ -1,17 +1,20 @@
 #!/bin/bash
 
-# i.e.   script.sh files.txt ./Modules ./Components
-
 syncFiles=$1
-source=$2
-destination=$3
 
-# echo $syncFiles
-# echo $source
-# echo $destination
+i=0
+while read -r line || [[ -n $line ]]; do
+	if [ $i == 0 ]; then
+		sources=`echo ${line} | awk -F ':' '{print $2}'`
+	elif [ $i == 1 ]; then
+		destination=`echo ${line} | awk -F ':' '{print $2}'`
+	fi
+	i=`expr $i + 1`
+done < $syncFiles
 
-echo "Sure copy files from ${source} to ${destination} (y/n):"
+echo "Sure copy files from ${sources} to ${destination} (y/n):"
 read -s -n 1 key
+echo $key
 if [[ $key != 'y' ]]; then
 	echo 'Exit.'
 	exit
@@ -19,18 +22,21 @@ else
 	echo 'Copying...'
 fi
 
+j=-1
 while read -r line || [[ -n $line ]]; do
-#	echo $line
+	j=`expr $j + 1`
+	if [ $j == 0 ] || [ $j == 1 ]; then
+		continue
+	fi
 	dirName=`dirname $line`
 	fileName=`basename $line`
 	
 	# create the destination directory
 	destinationDir="${destination}/${dirName}"
-#	echo $destinationDir
 	[ -d $destinationDir ] || mkdir -p $destinationDir
 
 	# copy the files from source to destination
-	sourceFilePath="${source}/${line}"
+	sourceFilePath="${sources}/${line}"
 	cp $sourceFilePath $destinationDir
 done < $syncFiles
 
